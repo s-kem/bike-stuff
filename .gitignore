@@ -1,0 +1,12 @@
+# node
+node_modules/
+
+# deployment
+dist/
+
+# linters & git hooks
+.eslintcache
+.stylelintcache
+
+# jest
+.jest-coverage

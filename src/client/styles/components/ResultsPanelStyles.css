@@ -1,0 +1,28 @@
+.results-panel {
+  margin-top: 30px;
+}
+
+.results-inlay {
+  padding: 30px;
+}
+
+.no-results-info {
+  color: #ffffff;
+  font-size: 1.1em;
+  vertical-align: text-top;
+}
+
+.results-row {
+  margin-bottom: 25px;
+}
+
+.results-row:last-of-type {
+  margin-bottom: inherit;
+}
+
+@media (max-width: 1000px) {
+
+  .result-card-col {
+    margin-bottom: 25px;
+  }
+}
