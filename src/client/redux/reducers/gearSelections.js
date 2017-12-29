@@ -1,4 +1,5 @@
 import {
+  SET_COMPARISON_RATIO,
   SET_SELECTED_CASSETTE,
   SET_SELECTED_CRANK,
 } from '../constants/gearSelections'
@@ -33,14 +34,21 @@ const selectedCassette = (state = 1, action = {}) => {
   }
 }
 
-const cassetteTypes = ( state = initialCassetteList, action = {}) => {
+const cassetteTypes = (state = initialCassetteList, action = {}) => {
   switch ( action.type ) {
     default: return state
   }
 }
 
-const crankTypes = ( state = initialCrankList, action = {}) => {
+const crankTypes = (state = initialCrankList, action = {}) => {
   switch ( action.type ) {
+    default: return state
+  }
+}
+
+const comparisonRatio = (state = 0, action = {}) => {
+  switch ( action.type ) {
+    case SET_COMPARISON_RATIO: return action.payload
     default: return state
   }
 }
@@ -50,4 +58,5 @@ export default combineReducers({
   selectedCassette,
   cassetteTypes,
   crankTypes,
+  comparisonRatio,
 })

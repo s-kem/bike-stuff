@@ -5,6 +5,7 @@ import {
 } from '../redux/selectors/getGearSelectValues'
 import GearSelectionsContainer from './GearSelectionsContainer'
 import RatioChart from '../components/RatioChart'
+import RatioComparisonContainer from './RatioComparisonContainer'
 import React from 'react'
 
 const RatioContainer = ({
@@ -13,6 +14,7 @@ const RatioContainer = ({
 }) => (
   <div>
     <GearSelectionsContainer />
+    <RatioComparisonContainer />
     <RatioChart
       cassetteGears={selectedCassette}
       crankGears={selectedCrank}
