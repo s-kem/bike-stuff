@@ -11,12 +11,14 @@ import React from 'react'
 const RatioContainer = ({
   selectedCassette,
   selectedCrank,
+  comparisonRatio,
 }) => (
   <div>
     <GearSelectionsContainer />
     <RatioComparisonContainer />
     <RatioChart
       cassetteGears={selectedCassette}
+      comparisonRatio={comparisonRatio}
       crankGears={selectedCrank}
     />
   </div>
@@ -25,6 +27,7 @@ const RatioContainer = ({
 const mapStateToProps = state => ({
   selectedCrank: getSelectedCrankValues(state),
   selectedCassette: getSelectedCassetteValues(state),
+  comparisonRatio: parseFloat(state.gearSelections.comparisonRatio, 10),
 })
 
 export default connect(mapStateToProps, {})(RatioContainer)

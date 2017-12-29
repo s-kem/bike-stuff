@@ -9,23 +9,18 @@ import {
 import React from 'react'
 
 const fixToTwo = num => parseFloat(num.toFixed(2), 10)
+const isWithin5Percent = ( v1, v2 ) => {
+  const offset = v2 * 0.05
+  const lowerBound = v2 - offset
+  const upperBound = v2 + offset
 
-const Row = ({
-  crankGears,
-  cassetteGears,
-  rowIndex,
-}) => (
-  <TableRow>
-    <TableRowColumn>
-      {`${rowIndex + 1} -- ${crankGears[rowIndex]}`}
-    </TableRowColumn>
-    {cassetteGears.map(gear => (<TableRowColumn key={`${rowIndex}-${gear}`}>{fixToTwo(crankGears[rowIndex] / gear)}</TableRowColumn>))}
-  </TableRow>
-)
+  return v1 > lowerBound && v1 < upperBound
+}
 
 export default ({
   crankGears,
   cassetteGears,
+  comparisonRatio,
 }) => crankGears && cassetteGears && crankGears.length && cassetteGears.length
   ? (
     <div>
@@ -42,11 +37,18 @@ export default ({
               <TableRowColumn>
                 {`${crankIdx + 1} -- ${crankTeeth}`}
               </TableRowColumn>
-              {cassetteGears.map(cassetteTeeth => (
-                <TableRowColumn key={`${crankIdx}-${cassetteTeeth}`}>
-                  {fixToTwo(crankTeeth / cassetteTeeth)}
-                </TableRowColumn>
-              ))}
+              {cassetteGears.map(cassetteTeeth => {
+                const val = fixToTwo(crankTeeth / cassetteTeeth)
+                const style = isWithin5Percent(val, comparisonRatio) ? { background: 'blue' } : {}
+
+                return (
+                  <TableRowColumn
+                    key={`${crankIdx}-${cassetteTeeth}`}
+                    style={style}
+                  >
+                    {val}
+                  </TableRowColumn>)
+              })}
             </TableRow>
           ))}
         </TableBody>
