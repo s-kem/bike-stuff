@@ -8,6 +8,8 @@ import React from 'react'
 import SelectField from 'material-ui/SelectField'
 import gearSelectionActions from '../redux/actions/gearSelectionActions'
 
+const handleChange = action => (event, index, value) => action(value)
+
 const RatioContainer = ({
   setSelectedCrank,
   setSelectedCassette,
@@ -18,7 +20,7 @@ const RatioContainer = ({
 }) => (
   <div>
     <SelectField
-      onChange={setSelectedCrank}
+      onChange={handleChange(setSelectedCrank)}
       placeholder='Select Crank'
       value={selectedCrank}
     >
@@ -27,7 +29,7 @@ const RatioContainer = ({
       ))}
     </SelectField>
     <SelectField
-      onChange={setSelectedCassette}
+      onChange={handleChange(setSelectedCassette)}
       placeholder='Select Cassette'
       value={selectedCassette}
     >

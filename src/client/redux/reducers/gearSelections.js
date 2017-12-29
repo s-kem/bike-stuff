@@ -3,7 +3,6 @@ import {
   SET_SELECTED_CRANK,
 } from '../constants/gearSelections'
 import { combineReducers } from 'redux'
-import getOrElse from 'lodash/get'
 
 const initialCassetteList = [
   {
@@ -20,16 +19,16 @@ const initialCrankList = [
     label: 'Shimano Tiagra 50/34',
   },
 ]
-const selectedCrank = (state = null, action = {}) => {
+const selectedCrank = (state = 1, action = {}) => {
   switch ( action.type ) {
-    case SET_SELECTED_CRANK: return getOrElse(action, 'payload.target.value', '')
+    case SET_SELECTED_CRANK: return action.payload
     default: return state
   }
 }
 
-const selectedCassette = (state = null, action = {}) => {
+const selectedCassette = (state = 1, action = {}) => {
   switch ( action.type ) {
-    case SET_SELECTED_CASSETTE: return getOrElse(action, 'payload.target.value', '')
+    case SET_SELECTED_CASSETTE: return action.payload
     default: return state
   }
 }
