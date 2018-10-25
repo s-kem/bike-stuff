@@ -24,14 +24,14 @@ export default ({
 }) => crankGears && cassetteGears && crankGears.length && cassetteGears.length
   ? (
     <div>
-      <Table selectable multiSelectable>
-        <TableHeader adjustForCheckbox={true} displaySelectAll={true}>
+      <Table selectable={false}>
+        <TableHeader adjustForCheckbox={false} displaySelectAll={false}>
           <TableRow>
             <TableHeaderColumn>Crank</TableHeaderColumn>
             {cassetteGears.map((gear, idx) => <TableHeaderColumn key={gear}>{`${idx + 1} - ${gear}t`}</TableHeaderColumn>)}
           </TableRow>
         </TableHeader>
-        <TableBody displayRowCheckbox>
+        <TableBody displayRowCheckbox={false}>
           {crankGears.map((crankTeeth, crankIdx) => (
             <TableRow key={crankTeeth}>
               <TableRowColumn>
@@ -39,11 +39,13 @@ export default ({
               </TableRowColumn>
               {cassetteGears.map(cassetteTeeth => {
                 const val = fixToTwo(crankTeeth / cassetteTeeth)
-                const style = isWithin5Percent(val, comparisonRatio) ? { background: 'blue' } : {}
+                const style = isWithin5Percent(val, comparisonRatio)
+                  ? { background: 'rgb(224, 224, 224)' }
+                  : {}
 
                 return (
                   <TableRowColumn
-                    key={`${crankIdx}-${cassetteTeeth}`}
+                    key={`${crankIdx}-${cassetteTeeth}`} // eslint-disable-line
                     style={style}
                   >
                     {val}

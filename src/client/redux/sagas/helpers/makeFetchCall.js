@@ -28,7 +28,7 @@ export const makeFetchCall = globalMethod => async function networkCall({
     })
     const contentType = response.headers.get('Content-Type')
 
-    if (/^application\/json;?\s*?([a-zA-Z=\-0-9]*)?$/.test(contentType)) {
+    if ( /^application\/json;?\s*?([a-zA-Z=\-0-9]*)?$/.test(contentType) ) {
       return {
         payload: await response.json(),
         statusCode: response.status,
@@ -43,7 +43,7 @@ export const makeFetchCall = globalMethod => async function networkCall({
       statusText: response.statusText,
       error: !response.ok,
     }
-  } catch (e) {
+  } catch ( e ) {
     return {
       payload: 'Could not make request: check your network connection.',
       statusCode: null,
