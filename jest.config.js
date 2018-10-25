@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'gear-ratios',
+  name: 'bike-stuff',
   collectCoverageFrom: [
     'src/client/redux/sagas/*.js',
     'src/client/redux/sagas/helpers/*.js',

@@ -76,7 +76,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/gear-ratios',
+    publicPath: '/bike-stuff',
   },
   devtool: !isProd ? 'source-map' : 'none',
   module: {

@@ -10,7 +10,7 @@ import makeReduxStore from './redux'
 import reducers from './redux/reducers'
 
 const store = makeReduxStore(reducers)
-const basename = 'gear-ratios'
+const basename = 'bike-stuff'
 
 ReactDOM.render(
   <MuiThemeProvider>

@@ -11,13 +11,22 @@ const initialCassetteList = [
     teeth: [ 34, 30, 25, 23, 21, 19, 17, 15, 13, 11 ],
     label: 'Shimano 11/34',
   },
+  {
+    id: 2,
+    teeth: [ 11, 12, 13, 14, 16, 18, 20, 22, 25, 28, 32 ],
+    label: 'Shimano Ultegra R8000 11/32',
+  }, {
+    id: 3,
+    teeth: [ 11, 13, 15, 17, 19, 21, 24, 27, 31, 35, 40 ],
+    label: 'Shimano XT M8000 11/40',
+  },
 ]
 
 const initialCrankList = [
   {
     id: 1,
     teeth: [ 50, 34 ],
-    label: 'Shimano Tiagra 50/34',
+    label: 'Shimano 50/34 Compact Crankset',
   },
 ]
 const selectedCrank = (state = 1, action = {}) => {

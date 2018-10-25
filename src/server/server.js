@@ -1,10 +1,11 @@
 const express = require('express')
 
 const app = express()
-const baseUrl = '/gear-ratios'
+const baseUrl = '/bike-stuff'
 
 
-if (process.env.NODE_ENV !== 'production') {
+if ( process.env.NODE_ENV !== 'production' ) {
+  require('piping')() // eslint-disable-line global-require
   /* eslint-disable global-require */
   const webpack = require('webpack')
   const webpackDevMiddleware = require('webpack-dev-middleware')
