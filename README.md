@@ -1,6 +1,6 @@
 # bike-stuff
 
-Fairly react/redux app for misc. bike calculators or whatnot.
+Fairly simple react/redux app for misc. bike calculators or whatnot.
 
 Right now there's two pages, /gear-ratios and /watts-per-kg
 
@@ -11,3 +11,5 @@ The motivation behind that was figuring out which gear would give me a comparabl
 /watts-per-kg is a simple slider UI for calculating your watts per kg based on your weight and FTP. 
 
 The motivation there was setting weight and FTP goals to hit my overall w/kg goal.
+
+Based on a friend's react/redux starter kit, so there's still leftover code.
